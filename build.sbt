@@ -2,7 +2,7 @@ name := "Bot Detector"
 
 version := "1.0"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq("datastax" % "spark-cassandra-connector" % "2.4.0-s_2.11", "org.apache.spark" %% "spark-streaming" % "2.4.3")
 
