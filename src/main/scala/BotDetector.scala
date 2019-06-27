@@ -100,16 +100,9 @@ object BotDetector {
               .toDF()
               .as("runningBots")
 
-            val storedBots: RDD[(String, Boolean)] = sc.getPersistentRDDs.values.find(_.name == "storedBots") match {
-              case Some(persistedBots) => persistedBots.asInstanceOf[RDD[(String, Boolean)]]
-              case None =>
-                val retrievedBots = sc.cassandraTable("botdetection", "stored_bots")
-                  .select("ip")
-                  .map(row => (row.get[String]("ip"), true))
-
-                retrievedBots.setName("storedBots")
-                retrievedBots.cache()
-            }
+            val storedBots: RDD[(String, Boolean)] = sc.cassandraTable("botdetection", "stored_bots")
+              .select("ip")
+              .map(row => (row.get[String]("ip"), true))
 
             res
               .join(storedBots.toDF("ip", "alreadyStored").as("storedBots"),
@@ -125,7 +118,10 @@ object BotDetector {
         .filter(r => r.ratio > 3 || r.total > 250 || r.categories > 10)
         .foreachRDD(r => {
           r.saveToCassandra("botdetection", "stored_bots", SomeColumns("ip"))
-          r.toDF().show()
+          r.map(r=>r.ip).distinct().foreach(z => {
+            println("RED CODE, satellites launched, codes loaded...")
+            println("Bot detected: " + z)
+          })
         })
 
       sc
