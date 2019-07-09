@@ -48,14 +48,13 @@ object BotDetector {
     Logger.getLogger("org.apache.spark").setLevel(Level.WARN)
     Logger.getLogger("org.spark-project").setLevel(Level.WARN)
 
-    //    val df = spark
-    //      .readStream
-    //      .format("kafka")
-    //      .option("kafka.bootstrap.servers", "localhost:9092")
-    //      .option("subscribe", "user_actions")
-    //      .option("startingOffsets", "earliest")
-    //      //.option("endingOffsets", "latest")
-    //      .load()
+    val stream = spark
+      .readStream
+      .format("kafka")
+      .option("kafka.bootstrap.servers", "localhost:9092")
+      .option("subscribe", "user_actions")
+      .option("startingOffsets", "earliest")
+      .load()
     import spark.implicits._
 
     val userSchema = new StructType()
@@ -64,71 +63,48 @@ object BotDetector {
       .add("ip", "String")
       .add("type", "String")
 
-    val value = classOf[StringDeserializer]
-    val kafkaParams = Map(
-      "key.deserializer" -> value,
-      "value.deserializer" -> value,
-      "group.id" -> "test_cons",
-      "bootstrap.servers" -> "localhost:9092",
-      "auto.offset.reset" -> "earliest",
-      "enable.auto.commit" -> (false: java.lang.Boolean)
-    )
-
-    val streamingContext = StreamingContext.getActiveOrCreate(() => {
-      val sc = new StreamingContext(spark.sparkContext, Seconds(10))
-      // sc.checkpoint(checkpointDir)
-      KafkaUtils.createDirectStream[String, String](
-        sc,
-        PreferConsistent,
-        Subscribe[String, String](Set("user_actions"), kafkaParams)
+    val res = stream
+      .selectExpr("CAST(value AS STRING)")
+      .where(from_json($"value", userSchema).isNotNull)
+      .select(from_json($"value", userSchema).as[UserAction])
+      .withWatermark("unix_time", "30 seconds")
+      .groupBy($"ip", window($"unix_time", "10 minutes", slideDuration = "1 minute"))
+      .agg(
+        sum(when($"type" === "click", 1).otherwise(0)).as("clicks"),
+        sum(when($"type" === "view", 1).otherwise(0)).as("views"),
+        approx_count_distinct("category_id").as("categories"),
+        count("ip").as("total")
       )
-        .transform {
-          message =>
-            val sc = message.sparkContext
-            val res: DataFrame = message.map(record => record.value())
-              .toDF("value")
-              .where(from_json($"value", userSchema).isNotNull)
-              .select(from_json($"value", userSchema).as[UserAction])
-              .groupBy($"ip", window($"unix_time", "10 minutes", slideDuration = "1 minute"))
-              .agg(
-                sum(when($"type" === "click", 1).otherwise(0)).as("clicks"),
-                sum(when($"type" === "view", 1).otherwise(0)).as("views"),
-                countDistinct("category_id").as("categories"),
-                count("ip").as("total")
-              )
-              .withColumn("ratio", $"clicks" / $"views")
-              .toDF()
-              .as("runningBots")
+      .withColumn("ratio", $"clicks" / $"views")
+      .toDF()
+      .as("runningBots")
 
-            val storedBots: RDD[(String, Boolean)] = sc.cassandraTable("botdetection", "stored_bots")
-              .select("ip")
-              .map(row => (row.get[String]("ip"), true))
+    val storedBots: RDD[(String, Boolean)] = spark.sparkContext.cassandraTable("botdetection", "stored_bots")
+      .select("ip")
+      .map(row => (row.get[String]("ip"), true))
 
-            res
-              .join(storedBots.toDF("ip", "alreadyStored").as("storedBots"),
-                $"storedBots.ip" === $"runningBots.ip",
-                "left")
-              .select("runningBots.ip", "clicks", "views", "categories", "ratio", "total", "alreadyStored")
-              .na.fill(value = false, Array("alreadyStored"))
-              .na.fill(value = 0, Array("ratio"))
-              .as[UserActionsWindow]
-              .rdd
-        }
-        .filter(r => r.clicks > 10 && !r.alreadyStored)
-        .filter(r => r.ratio > 3 || r.total > 250 || r.categories > 10)
-        .foreachRDD(r => {
-          r.saveToCassandra("botdetection", "stored_bots", SomeColumns("ip"))
-          r.map(r=>r.ip).distinct().foreach(z => {
-            println("RED CODE, satellites launched, codes loaded...")
-            println("Bot detected: " + z)
-          })
-        })
-
-      sc
-    })
-
-    streamingContext.start
-    streamingContext.awaitTermination
+    res
+      .join(storedBots.toDF("ip", "alreadyStored").as("storedBots"),
+        $"storedBots.ip" === $"runningBots.ip",
+        "left")
+      .select("runningBots.ip", "clicks", "views", "categories", "ratio", "total", "alreadyStored")
+      .na.fill(value = false, Array("alreadyStored"))
+      .na.fill(value = 0, Array("ratio"))
+      .as[UserActionsWindow]
+      .filter(r => r.clicks > 10 && !r.alreadyStored)
+      .filter(r => r.ratio > 3 || r.total > 250 || r.categories > 10)
+      .writeStream
+      .foreachBatch { (batchDF, _) =>
+        batchDF
+          .map(z => z.ip)
+          .toDF("ip")
+          .write
+          .cassandraFormat("stored_bots", "botdetection")
+          .mode(SaveMode.Overwrite)
+          .option("confirm.truncate", true)
+          .save
+      }.start()
+      .awaitTermination()
   }
 }
 

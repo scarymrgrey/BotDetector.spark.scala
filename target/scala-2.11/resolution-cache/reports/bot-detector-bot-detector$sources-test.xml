@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20190709152823"/>
+		date="20190709172206"/>
 	<dependencies>
 		<module organisation="org.apache.spark" name="spark-sql-kafka-0-10_2.11">
 			<revision name="2.4.3" status="release" pubdate="20190501095449" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spark.apache.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="178">

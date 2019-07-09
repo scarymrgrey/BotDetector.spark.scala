@@ -4,7 +4,7 @@
 		module="bot-detector$sources"
 		revision="1.0"
 		status="integration"
-		publication="20190709152823"
+		publication="20190709172206"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
