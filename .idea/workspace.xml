@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="358978e5-892d-41d1-930f-304f8e3ba96e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Bot Detector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Bot Detector.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/BotDetector.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/BotDetector.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/bot-detector/bot-detector$sources/1.0/resolved.xml.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/bot-detector/bot-detector$sources/1.0/resolved.xml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-compile-internal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-compile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-optional.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-plugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-provided.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-runtime-internal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-runtime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-scala-tool.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-test-internal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/bot-detector-bot-detector$sources-test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/BotDetector.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
+            <state relative-caret-position="219">
+              <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="25" />
               <folding>
                 <element signature="e#1#26#0" expanded="true" />
               </folding>
@@ -40,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-streaming_2.11/srcs/spark-streaming_2.11-2.4.3-sources.jar!/org/apache/spark/streaming/dstream/DStream.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
+            <state relative-caret-position="8127">
               <caret line="418" column="6" selection-start-line="418" selection-start-column="6" selection-end-line="418" selection-end-column="6" />
             </state>
           </provider>
@@ -144,6 +158,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,7 +195,6 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Course" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -243,6 +257,7 @@
     </option>
     <option name="modificationStamps">
       <map>
+        <entry key="$PROJECT_DIR$" value="3123117215000" />
         <entry key="$PROJECT_DIR$/build.sbt" value="642370834" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="1396028727" />
       </map>
@@ -252,6 +267,7 @@
         <entry key="$PROJECT_DIR$/../../../../04/module 3/section 2/FraudDetector" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../KafkaTxLogProducer" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../FraudDetector" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
       </map>
     </option>
   </component>
@@ -270,8 +286,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="1920" height="1010" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26144835" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26677316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -281,14 +298,14 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.408" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.408" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32914287" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32914287" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32914287" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" />
@@ -322,6 +339,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="105" column="33" lean-forward="true" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/BotDetector.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="25" />
+          <folding>
+            <element signature="e#1#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-streaming_2.11/srcs/spark-streaming_2.11-2.4.3-sources.jar!/org/apache/spark/streaming/dstream/DStream.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8127">
+          <caret line="418" column="6" selection-start-line="418" selection-start-column="6" selection-end-line="418" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -374,23 +408,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-streaming_2.11/srcs/spark-streaming_2.11-2.4.3-sources.jar!/org/apache/spark/streaming/dstream/DStream.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="418" column="6" selection-start-line="418" selection-start-column="6" selection-end-line="418" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/BotDetector.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
-          <folding>
-            <element signature="e#1#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
