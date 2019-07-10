@@ -1,33 +1,23 @@
 
 import java.sql.Timestamp
+import java.util.UUID.randomUUID
 
-import org.apache.spark.sql.{DataFrame, Dataset, Encoders, SaveMode, SparkSession}
-import org.apache.spark.sql.functions.{count, window, _}
-import org.apache.spark.sql.cassandra._
-import org.apache.spark.streaming._
 import com.datastax.spark.connector._
-import com.datastax.spark.connector.streaming._
-import org.apache.kafka.clients.consumer.ConsumerRecord
-import org.apache.kafka.common.serialization.StringDeserializer
-import org.apache.spark.streaming.Time
-import org.joda.time.DateTime
-import org.apache.spark.rdd.RDD
-import org.apache.spark.streaming.dstream.DStream
-import org.apache.spark.sql.types.StructType
-import org.apache.spark.streaming.kafka010.KafkaUtils
-import org.apache.kafka.common.serialization.StringDeserializer
-import org.apache.spark.sql.catalyst.expressions.UnixTimestamp
-import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
-import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
+import org.apache.ignite.configuration.{CacheConfiguration, _}
+import org.apache.ignite.spark.{IgniteContext, IgniteRDD}
 import org.apache.log4j.{Level, Logger}
+import org.apache.spark.sql.cassandra._
+import org.apache.spark.sql.functions.{window, _}
+import org.apache.spark.sql.types.StructType
+import org.apache.spark.sql.{SaveMode, SparkSession}
 
 case class Window(start: Timestamp, end: Timestamp)
 
 case class UserAction(unix_time: Timestamp, category_id: String, ip: String, `type`: String)
 
-case class UserActionsWindow(ip: String, categories: Long, clicks: Long, views: Long, ratio: Double, total: Long, alreadyStored: Boolean)
+case class UserActionsWindow(unix_time: Timestamp, category_id: String, ip: String, `type`: String, window: Window)
 
-case class UserActionAggregation(clicks: Int, views: Int, ratio: Double, requestsPerWindow: Int, totalRequests: Int)
+case class UserActionAggregation(ip: String, clicks: Int, views: Int, ratio: Double, requestsPerWindow: Int, categories: Int, alreadyStored: Boolean = false)
 
 object BotDetector {
   def main(args: Array[String]) {
@@ -68,41 +58,61 @@ object BotDetector {
       .where(from_json($"value", userSchema).isNotNull)
       .select(from_json($"value", userSchema).as[UserAction])
       .withWatermark("unix_time", "30 seconds")
-      .groupBy($"ip", window($"unix_time", "10 minutes", slideDuration = "1 minute"))
-      .agg(
-        sum(when($"type" === "click", 1).otherwise(0)).as("clicks"),
-        sum(when($"type" === "view", 1).otherwise(0)).as("views"),
-        approx_count_distinct("category_id").as("categories"),
-        count("ip").as("total")
-      )
-      .withColumn("ratio", $"clicks" / $"views")
-      .toDF()
-      .as("runningBots")
+      .withColumn("window", window($"unix_time", "10 minutes", slideDuration = "1 minute"))
+      .as[UserActionsWindow]
+      .groupByKey(r => (r.ip, r.window))
+      .mapGroups((key, actions) => {
+        var clicks = 0
+        var views = 0
+        var categories: Set[Int] = Set()
+        var total: Int = 0
+        actions.foreach(action => {
+          action.`type` match {
+            case "click" => clicks = clicks + 1
+            case "view" => views = views + 1
+          }
+          categories = categories ++ Set(action.category_id.toInt)
+          total = total + 1
+        })
+        val ratio = if (views == 0) clicks else clicks.toDouble / views.toDouble
+        UserActionAggregation(key._1, clicks, views, ratio, total, categories.size)
+      })
 
-    val storedBots: RDD[(String, Boolean)] = spark.sparkContext.cassandraTable("botdetection", "stored_bots")
+    val storedBots = spark.sparkContext.cassandraTable("botdetection", "stored_bots")
       .select("ip")
       .map(row => (row.get[String]("ip"), true))
 
-    res
-      .join(storedBots.toDF("ip", "alreadyStored").as("storedBots"),
-        $"storedBots.ip" === $"runningBots.ip",
-        "left")
-      .select("runningBots.ip", "clicks", "views", "categories", "ratio", "total", "alreadyStored")
+    val igniteContext = new IgniteContext(spark.sparkContext,
+      () => new IgniteConfiguration())
+
+    val cacheRdd: IgniteRDD[String, Boolean] = igniteContext.fromCache(new CacheConfiguration[String, Boolean](randomUUID().toString))
+    cacheRdd.savePairs(storedBots)
+
+    val storedBotsDF = cacheRdd.toDF("ip", "alreadyStored").as("storedBots")
+    res.join(storedBotsDF,
+      res("ip") === storedBotsDF("ip"),
+      "left")
+      .select(res("ip"), $"clicks", $"views", $"categories", $"ratio", $"requestsPerWindow", $"storedBots.alreadyStored")
       .na.fill(value = false, Array("alreadyStored"))
       .na.fill(value = 0, Array("ratio"))
-      .as[UserActionsWindow]
+      .as[UserActionAggregation]
       .filter(r => r.clicks > 10 && !r.alreadyStored)
-      .filter(r => r.ratio > 3 || r.total > 250 || r.categories > 10)
+      .filter(r => r.ratio > 3 || r.requestsPerWindow > 250 || r.categories > 10)
       .writeStream
       .foreachBatch { (batchDF, _) =>
-        batchDF
+        val filtered = batchDF
           .map(z => z.ip)
+          .except(cacheRdd.map(z => z._1).toDF().as[String])
+
+        filtered
           .toDF("ip")
           .write
           .cassandraFormat("stored_bots", "botdetection")
           .mode(SaveMode.Overwrite)
           .option("confirm.truncate", true)
           .save
+
+        cacheRdd.savePairs(filtered.map(z => (z, true)).rdd)
       }.start()
       .awaitTermination()
   }

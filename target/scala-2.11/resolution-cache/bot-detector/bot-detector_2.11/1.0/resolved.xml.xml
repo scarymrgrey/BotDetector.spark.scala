@@ -4,7 +4,7 @@
 		module="bot-detector_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20190626195342"
+		publication="20190710160315"
 	>
 		<description>
 		Bot Detector
@@ -39,5 +39,6 @@
 		<dependency org="org.apache.spark" name="spark-core_2.11" rev="2.4.3" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-sql_2.11" rev="2.4.3" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-hive_2.11" rev="2.4.3" conf="compile->default(compile)"/>
+		<dependency org="org.apache.ignite" name="ignite-spark" rev="2.7.5" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

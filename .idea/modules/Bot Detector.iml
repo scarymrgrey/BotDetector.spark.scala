@@ -14,6 +14,28 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: antlr:antlr:2.7.7:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-tx:4.3.18.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-jdbc:4.3.18.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-expression:4.3.18.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-core:4.3.18.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-context:4.3.18.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-beans:4.3.18.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.springframework:spring-aop:4.3.18.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.jetbrains:annotations:13.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.gridgain:ignite-shmem:1.0.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.lucene:lucene-sandbox:7.4.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.lucene:lucene-queryparser:7.4.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.lucene:lucene-queries:7.4.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.lucene:lucene-core:7.4.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.lucene:lucene-analyzers-common:7.4.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.ignite:ignite-spring:2.7.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.ignite:ignite-spark:2.7.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.ignite:ignite-log4j:2.7.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.ignite:ignite-indexing:2.7.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.ignite:ignite-core:2.7.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: javax.cache:cache-api:1.0.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: commons-codec:commons-codec:1.11:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.h2database:h2:1.4.197:jar" level="project" />
     <orderEntry type="module-library">
       <library name="sbt: unmanaged-sources-and-docs">
         <CLASSES />
@@ -166,7 +188,6 @@
     <orderEntry type="library" name="sbt: commons-dbcp:commons-dbcp:1.4:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-configuration:commons-configuration:1.6:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-collections:commons-collections:3.2.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: commons-codec:commons-codec:1.10:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-cli:commons-cli:1.2:jar" level="project" />
     <orderEntry type="library" name="sbt: com.vlkan:flatbuffers:1.2.0-3f79e055:jar" level="project" />
     <orderEntry type="library" name="sbt: com.univocity:univocity-parsers:2.7.3:jar" level="project" />
