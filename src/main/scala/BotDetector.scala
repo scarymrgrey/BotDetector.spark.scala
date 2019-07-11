@@ -9,7 +9,7 @@ import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.cassandra._
 import org.apache.spark.sql.functions.{window, _}
 import org.apache.spark.sql.types.StructType
-import org.apache.spark.sql.{SaveMode, SparkSession}
+import org.apache.spark.sql.{Dataset, SaveMode, SparkSession}
 
 case class Window(start: Timestamp, end: Timestamp)
 
@@ -21,9 +21,7 @@ case class UserActionAggregation(ip: String, clicks: Int, views: Int, ratio: Dou
 
 object BotDetector {
   def main(args: Array[String]) {
-
-    val checkpointDir = "file:///Users/kpolunin/checkpoint/chkpnt33"
-
+    val banTimeSecs = 600
     val spark = SparkSession.builder
       .master("local[4]")
       .appName("Bot Detector")
@@ -65,7 +63,7 @@ object BotDetector {
         var clicks = 0
         var views = 0
         var categories: Set[Int] = Set()
-        var total: Int = 0
+        var total = 0
         actions.foreach(action => {
           action.`type` match {
             case "click" => clicks = clicks + 1
@@ -80,26 +78,41 @@ object BotDetector {
 
     val storedBots = spark.sparkContext.cassandraTable("botdetection", "stored_bots")
       .select("ip")
-      .map(row => (row.get[String]("ip"), true))
+      .map(row => (row.get[String]("ip"), row.get[Long]("banUpTo")))
 
     val igniteContext = new IgniteContext(spark.sparkContext,
       () => new IgniteConfiguration())
 
-    val cacheRdd: IgniteRDD[String, Boolean] = igniteContext.fromCache(new CacheConfiguration[String, Boolean](randomUUID().toString))
+    val cacheRdd = igniteContext.fromCache(new CacheConfiguration[String, Long](randomUUID().toString))
     cacheRdd.savePairs(storedBots)
 
-    val storedBotsDF = cacheRdd.toDF("ip", "alreadyStored").as("storedBots")
+    val storedBotsDF = cacheRdd
+      .toDF("ip", "banUpTo")
+      .withColumn("now", unix_timestamp())
+      .withColumn("alreadyStored", lit(true))
+      .where($"banUpTo" > $"now")
+      .as("storedBots")
+
     res.join(storedBotsDF,
       res("ip") === storedBotsDF("ip"),
       "left")
       .select(res("ip"), $"clicks", $"views", $"categories", $"ratio", $"requestsPerWindow", $"storedBots.alreadyStored")
       .na.fill(value = false, Array("alreadyStored"))
       .na.fill(value = 0, Array("ratio"))
+      .withColumn("currentTime", unix_timestamp)
       .as[UserActionAggregation]
       .filter(r => r.clicks > 10 && !r.alreadyStored)
       .filter(r => r.ratio > 3 || r.requestsPerWindow > 250 || r.categories > 10)
       .writeStream
       .foreachBatch { (batchDF, _) =>
+        val timestamp = System.currentTimeMillis / 1000
+
+        batchDF
+          .sparkSession
+          .sqlContext
+          .sql("select ip from botdetection.stored_bots where banUpTo < " + timestamp)
+          .as[(Int)].rdd.deleteFromCassandra("botdetection", "stored_bots")
+
         val filtered = batchDF
           .map(z => z.ip)
           .except(cacheRdd.map(z => z._1).toDS())
@@ -112,7 +125,7 @@ object BotDetector {
           .option("confirm.truncate", true)
           .save
 
-        cacheRdd.savePairs(filtered.map(z => (z, true)).rdd)
+        cacheRdd.savePairs(filtered.map(z => (z, timestamp + banTimeSecs)).rdd)
       }.start()
       .awaitTermination()
   }

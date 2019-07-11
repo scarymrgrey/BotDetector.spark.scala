@@ -7,127 +7,127 @@
 		revision="1.0"
 		conf="compile"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20190710160315"/>
+		date="20190711164329"/>
 	<dependencies>
 		<module organisation="org.apache.ignite" name="ignite-spark">
-			<revision name="2.7.5" status="release" pubdate="20190604184811" resolver="public" artresolver="public" homepage="http://ignite.apache.org" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="195">
+			<revision name="2.7.5" status="release" pubdate="20190604184811" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://ignite.apache.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="195">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="13563" time="398" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-spark/ivy-2.7.5.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-spark/ivy-2.7.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-spark/2.7.5/ignite-spark-2.7.5.pom"/>
+				<metadata-artifact status="no" details="" size="13200" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-spark/ivy-2.7.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-spark/2.7.5/ignite-spark-2.7.5.pom"/>
 				<caller organisation="bot-detector" name="bot-detector_2.11" conf="compile" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="ignite-spark" type="jar" ext="jar" status="successful" details="" size="506344" time="476" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-spark/jars/ignite-spark-2.7.5.jar">
+					<artifact name="ignite-spark" type="jar" ext="jar" status="no" details="" size="506344" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-spark/jars/ignite-spark-2.7.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-spark/2.7.5/ignite-spark-2.7.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.ignite" name="ignite-log4j">
-			<revision name="2.7.5" status="release" pubdate="20190604184401" resolver="public" artresolver="public" homepage="http://ignite.apache.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="216">
+			<revision name="2.7.5" status="release" pubdate="20190604184401" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://ignite.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="216">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="11230" time="163" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-log4j/ivy-2.7.5.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-log4j/ivy-2.7.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-log4j/2.7.5/ignite-log4j-2.7.5.pom"/>
+				<metadata-artifact status="no" details="" size="11184" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-log4j/ivy-2.7.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-log4j/2.7.5/ignite-log4j-2.7.5.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-spark" conf="default, compile, runtime, master" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="ignite-log4j" type="jar" ext="jar" status="successful" details="" size="26601" time="371" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-log4j/jars/ignite-log4j-2.7.5.jar">
+					<artifact name="ignite-log4j" type="jar" ext="jar" status="no" details="" size="26601" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-log4j/jars/ignite-log4j-2.7.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-log4j/2.7.5/ignite-log4j-2.7.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.ignite" name="ignite-spring">
-			<revision name="2.7.5" status="release" pubdate="20190604184827" resolver="public" artresolver="public" homepage="http://ignite.apache.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="208">
+			<revision name="2.7.5" status="release" pubdate="20190604184827" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://ignite.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="208">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="12500" time="167" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-spring/ivy-2.7.5.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-spring/ivy-2.7.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-spring/2.7.5/ignite-spring-2.7.5.pom"/>
+				<metadata-artifact status="no" details="" size="12256" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-spring/ivy-2.7.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-spring/2.7.5/ignite-spring-2.7.5.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-spark" conf="default, compile, runtime, master" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="ignite-spring" type="jar" ext="jar" status="successful" details="" size="47080" time="413" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-spring/jars/ignite-spring-2.7.5.jar">
+					<artifact name="ignite-spring" type="jar" ext="jar" status="no" details="" size="47080" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-spring/jars/ignite-spring-2.7.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-spring/2.7.5/ignite-spring-2.7.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.springframework" name="spring-jdbc">
-			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074715" resolver="public" artresolver="public" homepage="https://github.com/spring-projects/spring-framework" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="215">
+			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074715" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spring-projects/spring-framework" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="215">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="3521" time="161" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-jdbc/ivy-4.3.18.RELEASE.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-jdbc/ivy-4.3.18.RELEASE.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-jdbc/4.3.18.RELEASE/spring-jdbc-4.3.18.RELEASE.pom"/>
+				<metadata-artifact status="no" details="" size="3906" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-jdbc/ivy-4.3.18.RELEASE.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-jdbc/4.3.18.RELEASE/spring-jdbc-4.3.18.RELEASE.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-spring" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="spring-jdbc" type="jar" ext="jar" status="successful" details="" size="430997" time="306" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-jdbc/jars/spring-jdbc-4.3.18.RELEASE.jar">
+					<artifact name="spring-jdbc" type="jar" ext="jar" status="no" details="" size="430997" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-jdbc/jars/spring-jdbc-4.3.18.RELEASE.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/springframework/spring-jdbc/4.3.18.RELEASE/spring-jdbc-4.3.18.RELEASE.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.springframework" name="spring-tx">
-			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074617" resolver="public" artresolver="public" homepage="https://github.com/spring-projects/spring-framework" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="214">
+			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074617" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spring-projects/spring-framework" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="214">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="3151" time="162" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-tx/ivy-4.3.18.RELEASE.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-tx/ivy-4.3.18.RELEASE.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-tx/4.3.18.RELEASE/spring-tx-4.3.18.RELEASE.pom"/>
+				<metadata-artifact status="no" details="" size="3646" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-tx/ivy-4.3.18.RELEASE.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-tx/4.3.18.RELEASE/spring-tx-4.3.18.RELEASE.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-spring" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="2.7.5"/>
 				<caller organisation="org.springframework" name="spring-jdbc" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<artifacts>
-					<artifact name="spring-tx" type="jar" ext="jar" status="successful" details="" size="268010" time="181" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-tx/jars/spring-tx-4.3.18.RELEASE.jar">
+					<artifact name="spring-tx" type="jar" ext="jar" status="no" details="" size="268010" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-tx/jars/spring-tx-4.3.18.RELEASE.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/springframework/spring-tx/4.3.18.RELEASE/spring-tx-4.3.18.RELEASE.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.springframework" name="spring-context">
-			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074712" resolver="public" artresolver="public" homepage="https://github.com/spring-projects/spring-framework" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="212">
+			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074712" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spring-projects/spring-framework" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="212">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="5023" time="161" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-context/ivy-4.3.18.RELEASE.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-context/ivy-4.3.18.RELEASE.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-context/4.3.18.RELEASE/spring-context-4.3.18.RELEASE.pom"/>
+				<metadata-artifact status="no" details="" size="4864" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-context/ivy-4.3.18.RELEASE.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-context/4.3.18.RELEASE/spring-context-4.3.18.RELEASE.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-spring" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="spring-context" type="jar" ext="jar" status="successful" details="" size="1142199" time="254" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.3.18.RELEASE.jar">
+					<artifact name="spring-context" type="jar" ext="jar" status="no" details="" size="1142199" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.3.18.RELEASE.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/springframework/spring-context/4.3.18.RELEASE/spring-context-4.3.18.RELEASE.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.springframework" name="spring-expression">
-			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074707" resolver="public" artresolver="public" homepage="https://github.com/spring-projects/spring-framework" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="213">
+			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074707" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spring-projects/spring-framework" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="213">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="1708" time="164" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-expression/ivy-4.3.18.RELEASE.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-expression/ivy-4.3.18.RELEASE.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-expression/4.3.18.RELEASE/spring-expression-4.3.18.RELEASE.pom"/>
+				<metadata-artifact status="no" details="" size="2740" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-expression/ivy-4.3.18.RELEASE.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-expression/4.3.18.RELEASE/spring-expression-4.3.18.RELEASE.pom"/>
 				<caller organisation="org.springframework" name="spring-context" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<caller organisation="org.apache.ignite" name="ignite-spring" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="spring-expression" type="jar" ext="jar" status="successful" details="" size="274861" time="268" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-expression/jars/spring-expression-4.3.18.RELEASE.jar">
+					<artifact name="spring-expression" type="jar" ext="jar" status="no" details="" size="274861" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-expression/jars/spring-expression-4.3.18.RELEASE.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/springframework/spring-expression/4.3.18.RELEASE/spring-expression-4.3.18.RELEASE.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.springframework" name="spring-aop">
-			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074602" resolver="public" artresolver="public" homepage="https://github.com/spring-projects/spring-framework" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="210">
+			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074602" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spring-projects/spring-framework" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="210">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="2681" time="173" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-aop/ivy-4.3.18.RELEASE.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-aop/ivy-4.3.18.RELEASE.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-aop/4.3.18.RELEASE/spring-aop-4.3.18.RELEASE.pom"/>
+				<metadata-artifact status="no" details="" size="3355" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-aop/ivy-4.3.18.RELEASE.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-aop/4.3.18.RELEASE/spring-aop-4.3.18.RELEASE.pom"/>
 				<caller organisation="org.springframework" name="spring-context" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<caller organisation="org.apache.ignite" name="ignite-spring" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="spring-aop" type="jar" ext="jar" status="successful" details="" size="380248" time="263" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-aop/jars/spring-aop-4.3.18.RELEASE.jar">
+					<artifact name="spring-aop" type="jar" ext="jar" status="no" details="" size="380248" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-aop/jars/spring-aop-4.3.18.RELEASE.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/springframework/spring-aop/4.3.18.RELEASE/spring-aop-4.3.18.RELEASE.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.springframework" name="spring-beans">
-			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074715" resolver="public" artresolver="public" homepage="https://github.com/spring-projects/spring-framework" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="211">
+			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074715" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spring-projects/spring-framework" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="211">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="2487" time="161" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-beans/ivy-4.3.18.RELEASE.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-beans/ivy-4.3.18.RELEASE.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-beans/4.3.18.RELEASE/spring-beans-4.3.18.RELEASE.pom"/>
+				<metadata-artifact status="no" details="" size="3195" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-beans/ivy-4.3.18.RELEASE.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-beans/4.3.18.RELEASE/spring-beans-4.3.18.RELEASE.pom"/>
 				<caller organisation="org.springframework" name="spring-context" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<caller organisation="org.apache.ignite" name="ignite-spring" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="2.7.5"/>
 				<caller organisation="org.springframework" name="spring-aop" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<caller organisation="org.springframework" name="spring-tx" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<caller organisation="org.springframework" name="spring-jdbc" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<artifacts>
-					<artifact name="spring-beans" type="jar" ext="jar" status="successful" details="" size="763404" time="220" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.3.18.RELEASE.jar">
+					<artifact name="spring-beans" type="jar" ext="jar" status="no" details="" size="763404" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.3.18.RELEASE.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/springframework/spring-beans/4.3.18.RELEASE/spring-beans-4.3.18.RELEASE.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.springframework" name="spring-core">
-			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074650" resolver="public" artresolver="public" homepage="https://github.com/spring-projects/spring-framework" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="209">
+			<revision name="4.3.18.RELEASE" status="release" pubdate="20180613074650" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spring-projects/spring-framework" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="209">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="2476" time="167" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-core/ivy-4.3.18.RELEASE.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-core/ivy-4.3.18.RELEASE.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-core/4.3.18.RELEASE/spring-core-4.3.18.RELEASE.pom"/>
+				<metadata-artifact status="no" details="" size="3184" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-core/ivy-4.3.18.RELEASE.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/springframework/spring-core/4.3.18.RELEASE/spring-core-4.3.18.RELEASE.pom"/>
 				<caller organisation="org.springframework" name="spring-beans" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<caller organisation="org.springframework" name="spring-context" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<caller organisation="org.apache.ignite" name="ignite-spring" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="2.7.5"/>
@@ -136,103 +136,103 @@
 				<caller organisation="org.springframework" name="spring-tx" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<caller organisation="org.springframework" name="spring-jdbc" conf="compile, runtime" rev="4.3.18.RELEASE" rev-constraint-default="4.3.18.RELEASE" rev-constraint-dynamic="4.3.18.RELEASE" callerrev="4.3.18.RELEASE"/>
 				<artifacts>
-					<artifact name="spring-core" type="jar" ext="jar" status="successful" details="" size="1131062" time="292" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.3.18.RELEASE.jar">
+					<artifact name="spring-core" type="jar" ext="jar" status="no" details="" size="1131062" time="0" location="/Users/kpolunin/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.3.18.RELEASE.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/springframework/spring-core/4.3.18.RELEASE/spring-core-4.3.18.RELEASE.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.ignite" name="ignite-indexing">
-			<revision name="2.7.5" status="release" pubdate="20190604184153" resolver="public" artresolver="public" homepage="http://ignite.apache.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="200">
+			<revision name="2.7.5" status="release" pubdate="20190604184153" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://ignite.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="200">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="11700" time="166" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-indexing/ivy-2.7.5.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-indexing/ivy-2.7.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-indexing/2.7.5/ignite-indexing-2.7.5.pom"/>
+				<metadata-artifact status="no" details="" size="11588" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-indexing/ivy-2.7.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-indexing/2.7.5/ignite-indexing-2.7.5.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-spark" conf="default, compile, runtime, master" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="2.7.5"/>
 				<caller organisation="org.apache.ignite" name="ignite-spring" conf="compile, runtime" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="ignite-indexing" type="jar" ext="jar" status="successful" details="" size="760489" time="689" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-indexing/jars/ignite-indexing-2.7.5.jar">
+					<artifact name="ignite-indexing" type="jar" ext="jar" status="no" details="" size="760489" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-indexing/jars/ignite-indexing-2.7.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-indexing/2.7.5/ignite-indexing-2.7.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.h2database" name="h2">
-			<revision name="1.4.197" status="release" pubdate="20180318212844" resolver="public" artresolver="public" homepage="http://www.h2database.com" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="207">
+			<revision name="1.4.197" status="release" pubdate="20180318212844" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.h2database.com" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="207">
 				<license name="MPL 2.0 or EPL 1.0" url="http://h2database.com/html/license.html"/>
-				<metadata-artifact status="successful" details="" size="960" time="165" location="/Users/kpolunin/.ivy2/cache/com.h2database/h2/ivy-1.4.197.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/com.h2database/h2/ivy-1.4.197.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/h2database/h2/1.4.197/h2-1.4.197.pom"/>
+				<metadata-artifact status="no" details="" size="2454" time="0" location="/Users/kpolunin/.ivy2/cache/com.h2database/h2/ivy-1.4.197.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/h2database/h2/1.4.197/h2-1.4.197.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-indexing" conf="compile, runtime" rev="1.4.197" rev-constraint-default="1.4.197" rev-constraint-dynamic="1.4.197" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="h2" type="jar" ext="jar" status="successful" details="" size="1927540" time="396" location="/Users/kpolunin/.ivy2/cache/com.h2database/h2/jars/h2-1.4.197.jar">
+					<artifact name="h2" type="jar" ext="jar" status="no" details="" size="1927540" time="0" location="/Users/kpolunin/.ivy2/cache/com.h2database/h2/jars/h2-1.4.197.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/h2database/h2/1.4.197/h2-1.4.197.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.lucene" name="lucene-queryparser">
-			<revision name="7.4.0" status="release" pubdate="20180622092247" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="204">
+			<revision name="7.4.0" status="release" pubdate="20180622092247" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="204">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="3517" time="164" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-queryparser/ivy-7.4.0.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-queryparser/ivy-7.4.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-queryparser/7.4.0/lucene-queryparser-7.4.0.pom"/>
+				<metadata-artifact status="no" details="" size="444182" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-queryparser/ivy-7.4.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-queryparser/7.4.0/lucene-queryparser-7.4.0.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-indexing" conf="compile, runtime" rev="7.4.0" rev-constraint-default="7.4.0" rev-constraint-dynamic="7.4.0" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="lucene-queryparser" type="jar" ext="jar" status="successful" details="" size="381911" time="410" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-queryparser/jars/lucene-queryparser-7.4.0.jar">
+					<artifact name="lucene-queryparser" type="jar" ext="jar" status="no" details="" size="381911" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-queryparser/jars/lucene-queryparser-7.4.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-queryparser/7.4.0/lucene-queryparser-7.4.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.lucene" name="lucene-sandbox">
-			<revision name="7.4.0" status="release" pubdate="20180622093945" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="206">
+			<revision name="7.4.0" status="release" pubdate="20180622093945" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="206">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2917" time="159" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-sandbox/ivy-7.4.0.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-sandbox/ivy-7.4.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-sandbox/7.4.0/lucene-sandbox-7.4.0.pom"/>
+				<metadata-artifact status="no" details="" size="443561" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-sandbox/ivy-7.4.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-sandbox/7.4.0/lucene-sandbox-7.4.0.pom"/>
 				<caller organisation="org.apache.lucene" name="lucene-queryparser" conf="compile, runtime" rev="7.4.0" rev-constraint-default="7.4.0" rev-constraint-dynamic="7.4.0" callerrev="7.4.0"/>
 				<artifacts>
-					<artifact name="lucene-sandbox" type="jar" ext="jar" status="successful" details="" size="238777" time="250" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-sandbox/jars/lucene-sandbox-7.4.0.jar">
+					<artifact name="lucene-sandbox" type="jar" ext="jar" status="no" details="" size="238777" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-sandbox/jars/lucene-sandbox-7.4.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-sandbox/7.4.0/lucene-sandbox-7.4.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.lucene" name="lucene-queries">
-			<revision name="7.4.0" status="release" pubdate="20180622094634" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="205">
+			<revision name="7.4.0" status="release" pubdate="20180622094634" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="205">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="3365" time="161" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-queries/ivy-7.4.0.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-queries/ivy-7.4.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-queries/7.4.0/lucene-queries-7.4.0.pom"/>
+				<metadata-artifact status="no" details="" size="444585" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-queries/ivy-7.4.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-queries/7.4.0/lucene-queries-7.4.0.pom"/>
 				<caller organisation="org.apache.lucene" name="lucene-queryparser" conf="compile, runtime" rev="7.4.0" rev-constraint-default="7.4.0" rev-constraint-dynamic="7.4.0" callerrev="7.4.0"/>
 				<artifacts>
-					<artifact name="lucene-queries" type="jar" ext="jar" status="successful" details="" size="265081" time="314" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-queries/jars/lucene-queries-7.4.0.jar">
+					<artifact name="lucene-queries" type="jar" ext="jar" status="no" details="" size="265081" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-queries/jars/lucene-queries-7.4.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-queries/7.4.0/lucene-queries-7.4.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.lucene" name="lucene-analyzers-common">
-			<revision name="7.4.0" status="release" pubdate="20180622093753" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="203">
+			<revision name="7.4.0" status="release" pubdate="20180622093753" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="203">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="3282" time="165" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-analyzers-common/ivy-7.4.0.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-analyzers-common/ivy-7.4.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-analyzers-common/7.4.0/lucene-analyzers-common-7.4.0.pom"/>
+				<metadata-artifact status="no" details="" size="443645" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-analyzers-common/ivy-7.4.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-analyzers-common/7.4.0/lucene-analyzers-common-7.4.0.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-indexing" conf="compile, runtime" rev="7.4.0" rev-constraint-default="7.4.0" rev-constraint-dynamic="7.4.0" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="lucene-analyzers-common" type="jar" ext="jar" status="successful" details="" size="1653498" time="502" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-analyzers-common/jars/lucene-analyzers-common-7.4.0.jar">
+					<artifact name="lucene-analyzers-common" type="jar" ext="jar" status="no" details="" size="1653498" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-analyzers-common/jars/lucene-analyzers-common-7.4.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-analyzers-common/7.4.0/lucene-analyzers-common-7.4.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.lucene" name="lucene-core">
-			<revision name="7.4.0" status="release" pubdate="20180622092031" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="202">
+			<revision name="7.4.0" status="release" pubdate="20180622092031" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="202">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="3038" time="170" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-core/ivy-7.4.0.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-core/ivy-7.4.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-core/7.4.0/lucene-core-7.4.0.pom"/>
+				<metadata-artifact status="no" details="" size="442721" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-core/ivy-7.4.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-core/7.4.0/lucene-core-7.4.0.pom"/>
 				<caller organisation="org.apache.lucene" name="lucene-queryparser" conf="compile, runtime" rev="7.4.0" rev-constraint-default="7.4.0" rev-constraint-dynamic="7.4.0" callerrev="7.4.0"/>
 				<caller organisation="org.apache.lucene" name="lucene-analyzers-common" conf="compile, runtime" rev="7.4.0" rev-constraint-default="7.4.0" rev-constraint-dynamic="7.4.0" callerrev="7.4.0"/>
 				<caller organisation="org.apache.ignite" name="ignite-indexing" conf="compile, runtime" rev="7.4.0" rev-constraint-default="7.4.0" rev-constraint-dynamic="7.4.0" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="lucene-core" type="jar" ext="jar" status="successful" details="" size="2925947" time="821" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-core/jars/lucene-core-7.4.0.jar">
+					<artifact name="lucene-core" type="jar" ext="jar" status="no" details="" size="2925947" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.lucene/lucene-core/jars/lucene-core-7.4.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/lucene/lucene-core/7.4.0/lucene-core-7.4.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="commons-codec" name="commons-codec">
-			<revision name="1.11" status="release" pubdate="20171017165430" resolver="public" artresolver="public" homepage="http://commons.apache.org/proper/commons-codec/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="201">
+			<revision name="1.11" status="release" pubdate="20171017165430" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-codec/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="201">
 				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="13966" time="167" location="/Users/kpolunin/.ivy2/cache/commons-codec/commons-codec/ivy-1.11.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/commons-codec/commons-codec/ivy-1.11.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.pom"/>
+				<metadata-artifact status="no" details="" size="12632" time="0" location="/Users/kpolunin/.ivy2/cache/commons-codec/commons-codec/ivy-1.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="1.4" rev-constraint-default="1.4" rev-constraint-dynamic="1.4" callerrev="2.6.5"/>
 				<caller organisation="commons-httpclient" name="commons-httpclient" conf="compile, runtime" rev="1.2" rev-constraint-default="1.2" rev-constraint-dynamic="1.2" callerrev="3.1"/>
 				<caller organisation="org.apache.parquet" name="parquet-encoding" conf="compile, runtime" rev="1.10" rev-constraint-default="1.10" rev-constraint-dynamic="1.10" callerrev="1.10.1"/>
@@ -250,7 +250,7 @@
 				<caller organisation="org.apache.spark" name="spark-hive_2.11" conf="default, compile, runtime, master" rev="1.10" rev-constraint-default="1.10" rev-constraint-dynamic="1.10" callerrev="2.4.3"/>
 				<caller organisation="org.apache.orc" name="orc-mapreduce" conf="compile, runtime" rev="1.4" rev-constraint-default="1.4" rev-constraint-dynamic="1.4" callerrev="1.5.5"/>
 				<artifacts>
-					<artifact name="commons-codec" type="jar" ext="jar" status="successful" details="" size="335042" time="351" location="/Users/kpolunin/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.11.jar">
+					<artifact name="commons-codec" type="jar" ext="jar" status="no" details="" size="335042" time="0" location="/Users/kpolunin/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.11.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.jar"/>
 					</artifact>
 				</artifacts>
@@ -319,53 +319,51 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.ignite" name="ignite-core">
-			<revision name="2.7.5" status="release" pubdate="20190604183756" resolver="public" artresolver="public" homepage="http://ignite.apache.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="196">
+			<revision name="2.7.5" status="release" pubdate="20190604183756" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://ignite.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="196">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="12277" time="261" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-core/ivy-2.7.5.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-core/ivy-2.7.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-core/2.7.5/ignite-core-2.7.5.pom"/>
+				<metadata-artifact status="no" details="" size="11392" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-core/ivy-2.7.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-core/2.7.5/ignite-core-2.7.5.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-spark" conf="default, compile, runtime, master" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="2.7.5"/>
 				<caller organisation="org.apache.ignite" name="ignite-log4j" conf="compile, runtime" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="2.7.5"/>
 				<caller organisation="org.apache.ignite" name="ignite-indexing" conf="compile, runtime" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="2.7.5"/>
 				<caller organisation="org.apache.ignite" name="ignite-spring" conf="compile, runtime" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="ignite-core" type="jar" ext="jar" status="successful" details="" size="11951290" time="3883" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-core/jars/ignite-core-2.7.5.jar">
+					<artifact name="ignite-core" type="jar" ext="jar" status="no" details="" size="11951290" time="0" location="/Users/kpolunin/.ivy2/cache/org.apache.ignite/ignite-core/jars/ignite-core-2.7.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/ignite/ignite-core/2.7.5/ignite-core-2.7.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.gridgain" name="ignite-shmem">
-			<revision name="1.0.0" status="release" pubdate="20150313232848" resolver="public" artresolver="public" homepage="http://www.gridgain.com" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="199">
+			<revision name="1.0.0" status="release" pubdate="20150313232848" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.gridgain.com" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="199">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1935" time="167" location="/Users/kpolunin/.ivy2/cache/org.gridgain/ignite-shmem/ivy-1.0.0.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.gridgain/ignite-shmem/ivy-1.0.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/gridgain/ignite-shmem/1.0.0/ignite-shmem-1.0.0.pom"/>
+				<metadata-artifact status="no" details="" size="2523" time="0" location="/Users/kpolunin/.ivy2/cache/org.gridgain/ignite-shmem/ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/gridgain/ignite-shmem/1.0.0/ignite-shmem-1.0.0.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-core" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="ignite-shmem" type="jar" ext="jar" status="successful" details="" size="58063" time="222" location="/Users/kpolunin/.ivy2/cache/org.gridgain/ignite-shmem/jars/ignite-shmem-1.0.0.jar">
+					<artifact name="ignite-shmem" type="jar" ext="jar" status="no" details="" size="58063" time="0" location="/Users/kpolunin/.ivy2/cache/org.gridgain/ignite-shmem/jars/ignite-shmem-1.0.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/gridgain/ignite-shmem/1.0.0/ignite-shmem-1.0.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.jetbrains" name="annotations">
-			<revision name="13.0" status="release" pubdate="20131217131043" resolver="public" artresolver="public" homepage="http://www.jetbrains.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="198">
+			<revision name="13.0" status="release" pubdate="20131217131043" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.jetbrains.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="198">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="4930" time="168" location="/Users/kpolunin/.ivy2/cache/org.jetbrains/annotations/ivy-13.0.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/org.jetbrains/annotations/ivy-13.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.pom"/>
+				<metadata-artifact status="no" details="" size="2908" time="0" location="/Users/kpolunin/.ivy2/cache/org.jetbrains/annotations/ivy-13.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-core" conf="compile, runtime" rev="13.0" rev-constraint-default="13.0" rev-constraint-dynamic="13.0" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="annotations" type="jar" ext="jar" status="successful" details="" size="17536" time="178" location="/Users/kpolunin/.ivy2/cache/org.jetbrains/annotations/jars/annotations-13.0.jar">
+					<artifact name="annotations" type="jar" ext="jar" status="no" details="" size="17536" time="0" location="/Users/kpolunin/.ivy2/cache/org.jetbrains/annotations/jars/annotations-13.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="javax.cache" name="cache-api">
-			<revision name="1.0.0" status="release" pubdate="20140328043442" resolver="public" artresolver="public" homepage="https://github.com/jsr107/jsr107spec" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="197">
-				<license name="JSR-000107 JCACHE 2.9 Public Review - Updated Specification
-                License
-            " url="https://raw.github.com/jsr107/jsr107spec/master/LICENSE.txt"/>
-				<metadata-artifact status="successful" details="" size="11413" time="170" location="/Users/kpolunin/.ivy2/cache/javax.cache/cache-api/ivy-1.0.0.xml" searched="true" original-local-location="/Users/kpolunin/.ivy2/cache/javax.cache/cache-api/ivy-1.0.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/cache/cache-api/1.0.0/cache-api-1.0.0.pom"/>
+			<revision name="1.0.0" status="release" pubdate="20140328043442" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/jsr107/jsr107spec" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="197">
+				<license name="JSR-000107 JCACHE 2.9 Public Review - Updated Specification                 License             " url="https://raw.github.com/jsr107/jsr107spec/master/LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="4067" time="0" location="/Users/kpolunin/.ivy2/cache/javax.cache/cache-api/ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/cache/cache-api/1.0.0/cache-api-1.0.0.pom"/>
 				<caller organisation="org.apache.ignite" name="ignite-core" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="2.7.5"/>
 				<artifacts>
-					<artifact name="cache-api" type="jar" ext="jar" status="successful" details="" size="49789" time="411" location="/Users/kpolunin/.ivy2/cache/javax.cache/cache-api/jars/cache-api-1.0.0.jar">
+					<artifact name="cache-api" type="jar" ext="jar" status="no" details="" size="49789" time="0" location="/Users/kpolunin/.ivy2/cache/javax.cache/cache-api/jars/cache-api-1.0.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/javax/cache/cache-api/1.0.0/cache-api-1.0.0.jar"/>
 					</artifact>
 				</artifacts>
