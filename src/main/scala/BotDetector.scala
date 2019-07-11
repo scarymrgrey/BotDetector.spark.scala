@@ -102,7 +102,7 @@ object BotDetector {
       .foreachBatch { (batchDF, _) =>
         val filtered = batchDF
           .map(z => z.ip)
-          .except(cacheRdd.map(z => z._1).toDF().as[String])
+          .except(cacheRdd.map(z => z._1).toDS())
 
         filtered
           .toDF("ip")
