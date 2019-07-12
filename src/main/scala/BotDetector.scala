@@ -114,7 +114,6 @@ object BotDetector {
 
         filtered
           .toDF("ip")
-          .withColumn("banUpTo", lit(timestamp + banTimeSecs))
           .write
           .cassandraFormat("stored_bots", "botdetection")
           .mode(SaveMode.Overwrite)
