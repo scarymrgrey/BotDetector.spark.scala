@@ -10,6 +10,7 @@ import org.apache.spark.sql.cassandra._
 import org.apache.spark.sql.functions.{window, _}
 import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.{Dataset, SaveMode, SparkSession}
+import com.datastax.spark.connector.writer._
 
 case class Window(start: Timestamp, end: Timestamp)
 
@@ -27,6 +28,7 @@ object BotDetector {
       .appName("Bot Detector")
       .config("spark.driver.memory", "2g")
       .config("spark.cassandra.connection.host", "localhost")
+      .config("spark.cassandra.output.ttl", banTimeSecs)
       .enableHiveSupport
       .getOrCreate()
 
@@ -104,21 +106,15 @@ object BotDetector {
       .filter(r => r.clicks > 10 && !r.alreadyStored)
       .filter(r => r.ratio > 3 || r.requestsPerWindow > 250 || r.categories > 10)
       .writeStream
-      .foreachBatch { (batchDF, _) =>
+      .foreachBatch { (batchDF: Dataset[UserActionAggregation], _) =>
         val timestamp = System.currentTimeMillis / 1000
-
-        batchDF
-          .sparkSession
-          .sqlContext
-          .sql("select ip from botdetection.stored_bots where banUpTo < " + timestamp)
-          .as[(Int)].rdd.deleteFromCassandra("botdetection", "stored_bots")
-
         val filtered = batchDF
           .map(z => z.ip)
           .except(cacheRdd.map(z => z._1).toDS())
 
         filtered
           .toDF("ip")
+          .withColumn("banUpTo", lit(timestamp + banTimeSecs))
           .write
           .cassandraFormat("stored_bots", "botdetection")
           .mode(SaveMode.Overwrite)
